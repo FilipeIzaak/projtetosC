@@ -6,7 +6,7 @@ main(){
 	int i;
 	int bit;
 	
-	printf("Insira o seu número");
+	printf("Insira o seu número, para se tornar em Binário");
 	scanf("%i", &num);
 	
 	while(num > 0){
