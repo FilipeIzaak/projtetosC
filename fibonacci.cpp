@@ -1,33 +1,41 @@
 /*
-	Name: fibonacci
-	Copyright: 
+	Name:  
 	Author: 
-	Date: 06/09/25 12:23
+	Date: 06/10/25 09:53
 	Description: 
 */
-
 #include <stdio.h>
+void fibonacci(int);
 
-int main() {
-    int T, N, i;
-    long fib[61]; // até Fib(60) cabe em 64 bits sem sinal
+int main(){
+	int quantElementos;
+	quantElementos = 0;
+	printf("Quantos elementos de fibonacci deseja ver? \n");
+	scanf("%d",&quantElementos);
+	
+	fibonacci(quantElementos);
 
-    // pré-calcular Fibonacci até 60
-    fib[0] = 0;
-    fib[1] = 1;
-    for (i = 2; i <= 60; i++) {
-        fib[i] = fib[i-1] + fib[i-2];
-    }
-
-    // ler número de casos de teste
-    scanf("%d", &T);
-
-    for (i = 0; i < T; i++) {
-        scanf("%d", &N);
-        printf("Fib(%d) = %llu\n", N, fib[N]);
-    }
-
-    return 0;
 }
 
+void fibonacci(int quantElementos){
+	long int ant, atual, prox;
+	ant = atual = 1;
+	prox = 0;
+	
+	printf("%lld,", ant);
+	printf("%lld,", atual);
+	
+	while(quantElementos - 1 > 0){
+		
+		prox = atual + ant;
+		ant = atual;
+		atual = prox;
+		
+		printf("%lld,", prox);
+		quantElementos--;
+	}
+	
+	
+
+}
 
